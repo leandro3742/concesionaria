@@ -139,6 +139,8 @@
             position: relative;
             min-width: 250px; 
             max-width: 300px;
+            max-height: 200px;
+            min-height: 100px;
         }
         
         .cuadros{
@@ -196,6 +198,7 @@
         }
         
     }
+    
 </style>
 
 <main>

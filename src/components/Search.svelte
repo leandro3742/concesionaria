@@ -69,44 +69,54 @@ function guardar(){
 </script>
 
 <style>
-
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap'); /*ESTE ES EL NUEVO*/
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+h1{
+    font-family: 'Inconsolata', monospace;  
+    margin-top: 10px;
+    text-align: center;
+}
+
 h2{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Inconsolata', monospace;
 }
 a{
     text-decoration: none;
     transition-duration: 1s;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Inconsolata', monospace;
 }
 
 button{
     outline:none;
     background-color: #5DADE2;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Inconsolata', monospace;
 }
+
+/* ES EL CONTENEDOR PRINCIPAL */
 .buscador{
     padding: 0;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin: 0;
     height: 200px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
     grid-template-rows: 85px 2fr;
 }
 
+/* SON LOS CONTENEDORES DE LOS BUSCADORES */
 .marcas, .estados{
     display: grid;
     justify-content: center;
     margin-left: 5px;
     padding: 5px;
 }
+ 
 .titulo{
     margin: 15px;
     position: sticky;
 }
 
+/* SON LOS BOTONES (TODOS) */
 .botones{
     border: outset;
     padding-left: 10px;
@@ -116,22 +126,31 @@ button{
 .botones:active{
     border: inherit;  
 }
+
+/* EL CONTENEDOR DEL BOTON BUSCAR */
 .buscar{
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: flex-end;
-    margin-bottom: 2px;
-    padding: 5px;
+    margin-bottom: 5px;
+    /* padding: 5px; */
 }
+
+/* EL BOTON BUSCAR */
 .buscar-btn{
-    border-radius: 10px;
-    border: outset;
+    color: white;
+    background: #2b6cb0;
+    padding: 2.5px;
+    border-radius: 2.5px;
+    /* border: outset; */
     transition-duration: 1s;
 }
 .buscar-btn:active{
     border: inherit;
     outline:none;
 }
+
+/* LOS CONTENEDORES DE CUANDO SE ACTIVAN LOS BOTONES */
 .menu{
     margin-top: 10px;
     display: grid;
@@ -174,8 +193,11 @@ button{
     }
 }
 
+
 </style>
 
+
+<h1>Que es lo que estas buscando?</h1>
 <div class="buscador">
 
     <div class="marcas">
@@ -189,7 +211,7 @@ button{
     </div>
 
     <div class="buscar">
-        <a href="/" alt=""> <button on:click={guardar} class="buscar-btn">Buscar</button> </a>
+       <button on:click={guardar} class="buscar-btn">Buscar</button>
     </div>
     
     <div class="menu">
@@ -218,3 +240,7 @@ button{
 {#if me_voy === true}
     <Autos {MARCA} {ESTADO} />
 {/if}
+
+<!-- {#if me_voy === false}
+    <img src=banner2.jpg alt="">
+{/if} -->
